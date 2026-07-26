@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="{{ asset('lib/cropper/css/cropper.min.css') }}" rel="stylesheet">
+<script src="{{ asset('lib/cropper/js/cropperjs.js') }}" defer></script>
+    
     <div class="card shadow-sm">
         <div class="card-header">{{ __('User Profile') }}</div>
         <div class="card-body">
@@ -73,11 +76,13 @@
 
                 <label for="avatar" class="text-muted">Upload avatar</label>
                 <div class="form-group d-flex justify-content-between">
-                    <input type='file' name='avatar' id="avatar"
+                    <input type="file" name="avatar" id="avatar"
                         class="form-control border-0 py-0 pl-0 file-upload-btn {{ $current_user->avatar !== 'default.png' ? 'replace-image' : ''}}" value="{{ $current_user->avatar }}">
-                    @error('avatar')
+                        @error('avatar')
                         <span class="invalid-feedback" role="alert">{{ $errors->first('avatar') }}</span>
                         @endif
+
+                        <input type="hidden" name="cropped_avatar" id="cropped_avatar">
 
                         <div class="position-relative" id="avatar-container">
                             <img class="rounded-circle img-thumbnail avatar-preview"
@@ -103,6 +108,30 @@
                         </div>
                     </div>
                 </form>
+
+                <!-- Crop Avatar Modal -->
+                <div class="modal fade" id="cropModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-sm modal-dialog-centered">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title">Crop avatar</h5>
+                                <button type="button" class="btn-close" id="crop-close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <img id="crop-image">
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" id="crop-cancel">Cancel</button>
+                                <button type="button" class="btn btn-success" id="crop-button">Crop &amp; Use Image</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                @include('partials.crop-script')
             </div>
         </div>
     @endsection

@@ -11,7 +11,18 @@ This is a simple, easy to use, CMS, ideal for an online newspaper or a blog. Lar
 3. The code is DRY and easy-to-follow, so contributors will have no headaches.
 4. The newsletter form is integrated with **Mailchimp**.
 5. Its Admin is designed with **Bootstrap 5 SASS** and very easy to customize.
-6. It is free (but patrons will be appreciated).
+6. It's free and open source.
+
+## Support Brave CMS
+
+Brave CMS is free, open source, and maintained in my spare time.
+
+If you find the project useful, please consider supporting its continued development. Your sponsorship helps fund new features, bug fixes, documentation, security updates, and long-term maintenance.
+
+⭐ Star this repository if you like the project.
+
+❤️ Sponsor Brave CMS on Open Collective:
+https://opencollective.com/brave-cms
 
 ### Video demo
 

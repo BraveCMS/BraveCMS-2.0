@@ -1,49 +1,79 @@
 // User avatar
 .user-dropdown-trigger {
-	line-height: 1;
+  line-height: 1;
 }
 
 .avatar-top {
-	height: 34px;
-	margin-top: 2px;
+  height: 34px;
+  margin-top: 2px;
   width: auto;
 
-	@media (max-width: 767px) {
-		margin-right: 4px;
-	}
+  @media (max-width: 767px) {
+    margin-right: 4px;
+  }
+}
+
+#crop-image {
+  display: block;
+  max-width: 100%;
+  max-height: 50vh;
+}
+
+#cropModal {
+  .modal-dialog {
+    max-width: 900px;
+  }
+
+  .modal-body {
+    overflow: hidden;
+    padding: 1rem;
+  }
+
+  .cropper-container {
+    max-width: 100% !important;
+  }
+
+  .cropper-container {
+    display: block !important;
+  }
+
+  .cropper-wrap-box,
+  .cropper-canvas {
+    overflow: hidden !important;
+  }
 }
 
 .avatar-preview {
-	max-width: 82px;
-	float: right;
-	margin-top: -25px;
-	background: #f7f7f7;
+  max-width: 82px;
+  float: right;
+  margin-top: -25px;
+  background: #f7f7f7;
 }
 
 .avatar-trash {
-	transition: all .5s ease;
-	position: absolute;
-	right: 0;
-	top: -25px;
-	bottom: 0;
-	width: 100%;
-	max-width: 90px;
-	border-radius: 50%;
-	background: rgba(255, 255, 255, .2);
-	visibility: visible;
-	opacity: 0;
-	font-size: 133%;
+  transition: all .5s ease;
+  position: absolute;
+  right: 0;
+  top: -25px;
+  bottom: 0;
+  width: 100%;
+  max-width: 90px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .2);
+  visibility: visible;
+  opacity: 0;
+  font-size: 133%;
 
-	&:hover {
-		opacity: 1;
-	}
+  &:hover {
+    opacity: 1;
+  }
 
-	a {
-		line-height: 1;
-		text-shadow: 1px 1px rgba(1, 1, 1, .2);
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-	}
+  a {
+    line-height: 1;
+    text-shadow: 1px 1px rgba(1, 1, 1, .2);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }

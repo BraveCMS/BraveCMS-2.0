@@ -20003,11 +20003,6 @@ label {
 .switch-toggle {
   display: inline-block;
 }
-
-.switch-toggle-label {
-  min-width: 125px;
-}
-
 .switch-toggle input[type=checkbox] {
   height: 0;
   width: 0;
@@ -20236,6 +20231,30 @@ label {
   .avatar-top {
     margin-right: 4px;
   }
+}
+
+#crop-image {
+  display: block;
+  max-width: 100%;
+  max-height: 50vh;
+}
+
+#cropModal .modal-dialog {
+  max-width: 900px;
+}
+#cropModal .modal-body {
+  overflow: hidden;
+  padding: 1rem;
+}
+#cropModal .cropper-container {
+  max-width: 100% !important;
+}
+#cropModal .cropper-container {
+  display: block !important;
+}
+#cropModal .cropper-wrap-box,
+#cropModal .cropper-canvas {
+  overflow: hidden !important;
 }
 
 .avatar-preview {
