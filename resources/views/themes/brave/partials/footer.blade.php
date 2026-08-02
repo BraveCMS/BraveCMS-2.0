@@ -6,8 +6,11 @@
   </div>
 
   <script src="{{ asset('themes/' . $theme_directory . '/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('themes/' . $theme_directory . '/js/newsletter.js') }}"></script>
   
+  @if (Route::is('show') || Route::is('page'))
+    <script src="{{ asset('themes/' . $theme_directory . '/js/newsletter.js') }}"></script>
+  @endif
+
   @if (Route::is('show'))
       {{-- Scripts for single.blade.php only --}}
       <script src="{{ asset('themes/' . $theme_directory . '/js/print.min.js') }}"></script>
