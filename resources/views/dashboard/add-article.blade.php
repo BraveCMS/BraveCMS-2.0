@@ -2,7 +2,14 @@
 
 @section('content')
     <div class="card shadow-sm">
-        <div class="card-header px-2">{{ __('New article') }}</div>
+        <div class="card-header d-flex justify-content-between px-2">
+            <span class="align-self-center">{{ __('New article') }}</span>
+            <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#aiWriterModal">
+                <i class="fa-solid fa-microchip"></i>
+                Write with AI
+            </button>
+
+        </div>
         <div class="card-body">
             <form method="POST" action="{{ route('dashboard.articles.add') }}" enctype="multipart/form-data" novalidate>
                 @csrf
@@ -151,7 +158,7 @@
                             <label for="video-file" class="col-md-12">{{ __('Upload video') }}</label>
                             <div class="col-md-12 post-video @error('video') has-error @enderror">
                                 <input type="file" name="video" id="video-file"
-                                    class="file-upload-btn video-upload" onchange="validateVideo(event)"">
+                                    class="file-upload-btn video-upload" onchange="validateVideo(event)">
                                 @error('video')
                                     <span class="invalid-feedback invalid-upload"
                                         role="alert"><strong>{{ $message }}</strong></span>
@@ -212,7 +219,9 @@
                     </div>
                 </div>
             </form>
-            @include('partials.media-preview-script')
         </div>
     </div>
+    @include('partials.generate-ai-modal')
+    @include('partials.media-preview-script')
+    @include('partials.generate-ai-script')
 @endsection
