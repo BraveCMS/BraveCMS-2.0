@@ -20104,6 +20104,18 @@ label {
   right: 32px;
 }
 
+.btn-social-login:focus {
+  outline: 0 !important;
+}
+.btn-social-login .btn-icon {
+  margin-right: 2px;
+}
+
+.btn-fb-login {
+  background: #1877F2;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
 .btn-success {
   color: #ffffff !important;
 }
