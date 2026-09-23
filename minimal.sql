@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Mar 06, 2026 at 08:20 AM
--- Server version: 5.7.31
--- PHP Version: 7.3.21
+-- Gazdă: 127.0.0.1:3306
+-- Timp de generare: sept. 23, 2026 la 05:04 PM
+-- Versiune server: 5.7.31
+-- Versiune PHP: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `larabloga`
+-- Bază de date: `larabloga`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `articles`
+-- Structură tabel pentru tabel `articles`
 --
 
 DROP TABLE IF EXISTS `articles`;
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `article_categories`
+-- Structură tabel pentru tabel `article_categories`
 --
 
 DROP TABLE IF EXISTS `article_categories`;
@@ -68,17 +68,17 @@ CREATE TABLE IF NOT EXISTS `article_categories` (
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `article_categories`
+-- Eliminarea datelor din tabel `article_categories`
 --
 
 INSERT INTO `article_categories` (`id`, `user_id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Uncategorised', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(2, 2, 'Sports', '2026-03-06 06:19:11', '2026-03-06 06:19:11');
+(1, 1, 'Uncategorised', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(2, 2, 'Sports', '2026-09-23 14:03:35', '2026-09-23 14:03:35');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `article_tag`
+-- Structură tabel pentru tabel `article_tag`
 --
 
 DROP TABLE IF EXISTS `article_tag`;
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `article_tag` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comments`
+-- Structură tabel pentru tabel `comments`
 --
 
 DROP TABLE IF EXISTS `comments`;
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `failed_jobs`
+-- Structură tabel pentru tabel `failed_jobs`
 --
 
 DROP TABLE IF EXISTS `failed_jobs`;
@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Structură tabel pentru tabel `migrations`
 --
 
 DROP TABLE IF EXISTS `migrations`;
@@ -141,10 +141,10 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Eliminarea datelor din tabel `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -161,12 +161,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (11, '2023_01_01_120457_create_permissions_table', 1),
 (12, '2023_01_01_150407_create_roles_permissions_table', 1),
 (13, '2025_02_02_141817_create_tags_table', 1),
-(14, '2025_02_02_152221_create_article_tag_table', 1);
+(14, '2025_02_02_152221_create_article_tag_table', 1),
+(15, '2026_09_23_090838_add_social_auth_columns_to_users_table', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pages`
+-- Structură tabel pentru tabel `pages`
 --
 
 DROP TABLE IF EXISTS `pages`;
@@ -182,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `pages` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Structură tabel pentru tabel `password_resets`
 --
 
 DROP TABLE IF EXISTS `password_resets`;
@@ -196,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `permissions`
+-- Structură tabel pentru tabel `permissions`
 --
 
 DROP TABLE IF EXISTS `permissions`;
@@ -211,40 +212,40 @@ CREATE TABLE IF NOT EXISTS `permissions` (
 ) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `permissions`
+-- Eliminarea datelor din tabel `permissions`
 --
 
 INSERT INTO `permissions` (`id`, `slug`, `label`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'view-articles', 'View articles', 'Gives a user the permission to view articles.', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(2, 'add-articles', 'Write articles', 'Gives a user the permission to write articles.', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(3, 'edit-articles', 'Edit articles', 'Gives a user the permission to edit her/his own articles.', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(4, 'delete-articles', 'Delete articles', 'Gives a user the permission to delete her/his own articles.', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(5, 'view-categories', 'View categories', 'Gives a user the permission to view the list of categories.', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(6, 'add-categories', 'Add categories', 'Gives a user the permission to create article categories.', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(7, 'edit-categories', 'Edit categories', 'Gives a user the permission to edit article categories.', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(8, 'delete-categories', 'Delete categories', 'Gives a user the permission to delete article categories.', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(9, 'view-tags', 'View tags', 'Gives a user the permission to view the list of tags.', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(10, 'add-tags', 'Add tags', 'Gives a user the permission to create article tags.', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(11, 'edit-tags', 'Edit tags', 'Gives a user the permission to edit article tags.', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(12, 'delete-tags', 'Delete tags', 'Gives a user the permission to delete article tags.', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(13, 'view-comments', 'View comments on the dashboard', 'Gives a user the permission to view article comments on the dashboard', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(14, 'delete-comments', 'Delete comments', 'Gives a user the permission to delete article comments', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(15, 'approve-comments', 'Approve comments', 'Gives a user the permission to approve article comments', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(16, 'unapprove-comments', 'Unapprove comments', 'Gives a user the permission to unapprove article comments', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(17, 'view-pages', 'View pages', 'Gives a user the permission to view the pages list (on the dashboard)', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(18, 'add-pages', 'Add pages', 'Gives a user the permission to add pages', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(19, 'edit-pages', 'Edit pages', 'Gives a user the permission to edit pages', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(20, 'delete-pages', 'Delete pages', 'Gives a user the permission to delete pages', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(21, 'edit-settings', 'Edit site settings', 'Gives the super-admin the permission to edit site settings.', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(22, 'manage-user-rights', 'Manage user rights', 'Gives the super-admin the permission to manage user rights', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(23, 'ban-users', 'Ban users', 'Gives the super-admin the permission to suspend user accounts', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(24, 'activate-users', 'Activate user accounts', 'Gives the super-admin the permission to activate user accounts', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(25, 'assign-user-roles', 'Assign user roles', 'Gives the super-admin the permission to assign roles to users', '2026-03-06 06:19:10', '2026-03-06 06:19:10');
+(1, 'view-articles', 'View articles', 'Gives a user the permission to view articles.', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(2, 'add-articles', 'Write articles', 'Gives a user the permission to write articles.', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(3, 'edit-articles', 'Edit articles', 'Gives a user the permission to edit her/his own articles.', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(4, 'delete-articles', 'Delete articles', 'Gives a user the permission to delete her/his own articles.', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(5, 'view-categories', 'View categories', 'Gives a user the permission to view the list of categories.', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(6, 'add-categories', 'Add categories', 'Gives a user the permission to create article categories.', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(7, 'edit-categories', 'Edit categories', 'Gives a user the permission to edit article categories.', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(8, 'delete-categories', 'Delete categories', 'Gives a user the permission to delete article categories.', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(9, 'view-tags', 'View tags', 'Gives a user the permission to view the list of tags.', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(10, 'add-tags', 'Add tags', 'Gives a user the permission to create article tags.', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(11, 'edit-tags', 'Edit tags', 'Gives a user the permission to edit article tags.', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(12, 'delete-tags', 'Delete tags', 'Gives a user the permission to delete article tags.', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(13, 'view-comments', 'View comments on the dashboard', 'Gives a user the permission to view article comments on the dashboard', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(14, 'delete-comments', 'Delete comments', 'Gives a user the permission to delete article comments', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(15, 'approve-comments', 'Approve comments', 'Gives a user the permission to approve article comments', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(16, 'unapprove-comments', 'Unapprove comments', 'Gives a user the permission to unapprove article comments', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(17, 'view-pages', 'View pages', 'Gives a user the permission to view the pages list (on the dashboard)', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(18, 'add-pages', 'Add pages', 'Gives a user the permission to add pages', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(19, 'edit-pages', 'Edit pages', 'Gives a user the permission to edit pages', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(20, 'delete-pages', 'Delete pages', 'Gives a user the permission to delete pages', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(21, 'edit-settings', 'Edit site settings', 'Gives the super-admin the permission to edit site settings.', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(22, 'manage-user-rights', 'Manage user rights', 'Gives the super-admin the permission to manage user rights', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(23, 'ban-users', 'Ban users', 'Gives the super-admin the permission to suspend user accounts', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(24, 'activate-users', 'Activate user accounts', 'Gives the super-admin the permission to activate user accounts', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(25, 'assign-user-roles', 'Assign user roles', 'Gives the super-admin the permission to assign roles to users', '2026-09-23 14:03:35', '2026-09-23 14:03:35');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal_access_tokens`
+-- Structură tabel pentru tabel `personal_access_tokens`
 --
 
 DROP TABLE IF EXISTS `personal_access_tokens`;
@@ -266,7 +267,7 @@ CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Structură tabel pentru tabel `roles`
 --
 
 DROP TABLE IF EXISTS `roles`;
@@ -281,19 +282,19 @@ CREATE TABLE IF NOT EXISTS `roles` (
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `roles`
+-- Eliminarea datelor din tabel `roles`
 --
 
 INSERT INTO `roles` (`id`, `name`, `label`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'user', 'Basic User', 'The Basic User can view and comment on articles.', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(2, 'author', 'Author', 'In addition to being able to do all a Basic User can do, an Author can create articles, and also edit or delete his/her own articles.', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(3, 'admin', 'Site Administrator', 'The Admin can view and comment on articles; create and edit article categories; create and edit and delete any articles; create and edit and delete users.', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(4, 'super-admin', 'Super-admin', 'The Super-admin can do everything that the Admin can do. Additionally, the Site owner can give/revoke user roles and ban users. The website has only one Super-admin.', '2026-03-06 06:19:10', '2026-03-06 06:19:10');
+(1, 'user', 'Basic User', 'The Basic User can view and comment on articles.', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(2, 'author', 'Author', 'In addition to being able to do all a Basic User can do, an Author can create articles, and also edit or delete his/her own articles.', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(3, 'admin', 'Site Administrator', 'The Admin can view and comment on articles; create and edit article categories; create and edit and delete any articles; create and edit and delete users.', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(4, 'super-admin', 'Super-admin', 'The Super-admin can do everything that the Admin can do. Additionally, the Site owner can give/revoke user roles and ban users. The website has only one Super-admin.', '2026-09-23 14:03:35', '2026-09-23 14:03:35');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles_permissions`
+-- Structură tabel pentru tabel `roles_permissions`
 --
 
 DROP TABLE IF EXISTS `roles_permissions`;
@@ -305,7 +306,7 @@ CREATE TABLE IF NOT EXISTS `roles_permissions` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `roles_permissions`
+-- Eliminarea datelor din tabel `roles_permissions`
 --
 
 INSERT INTO `roles_permissions` (`role_id`, `permission_id`) VALUES
@@ -363,7 +364,7 @@ INSERT INTO `roles_permissions` (`role_id`, `permission_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- Structură tabel pentru tabel `settings`
 --
 
 DROP TABLE IF EXISTS `settings`;
@@ -385,16 +386,16 @@ CREATE TABLE IF NOT EXISTS `settings` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `settings`
+-- Eliminarea datelor din tabel `settings`
 --
 
 INSERT INTO `settings` (`id`, `site_name`, `tagline`, `owner_name`, `owner_email`, `twitter`, `facebook`, `instagram`, `theme_directory`, `is_cookieconsent`, `is_infinitescroll`, `created_at`, `updated_at`) VALUES
-(1, 'My Blog', 'A simple blog application made with Laravel', 'My Company', 'company@domain.com', 'https://twitter.com', 'https://facebook.com', 'https://instagram.com', 'brave', 1, 0, '2026-03-06 06:19:10', '2026-03-06 06:19:10');
+(1, 'My Blog', 'A simple blog application made with Laravel', 'My Company', 'company@domain.com', 'https://twitter.com', 'https://facebook.com', 'https://instagram.com', 'brave', 1, 0, '2026-09-23 14:03:35', '2026-09-23 14:03:35');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tags`
+-- Structură tabel pentru tabel `tags`
 --
 
 DROP TABLE IF EXISTS `tags`;
@@ -407,18 +408,18 @@ CREATE TABLE IF NOT EXISTS `tags` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `tags`
+-- Eliminarea datelor din tabel `tags`
 --
 
 INSERT INTO `tags` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'Books', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(2, 'Movies', '2026-03-06 06:19:10', '2026-03-06 06:19:10'),
-(3, 'News', '2026-03-06 06:19:10', '2026-03-06 06:19:10');
+(1, 'Books', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(2, 'Movies', '2026-09-23 14:03:35', '2026-09-23 14:03:35'),
+(3, 'News', '2026-09-23 14:03:35', '2026-09-23 14:03:35');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structură tabel pentru tabel `users`
 --
 
 DROP TABLE IF EXISTS `users`;
@@ -432,6 +433,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `bio` longtext COLLATE utf8mb4_unicode_ci,
   `avatar` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'default.png',
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `provider` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `provider_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `active` tinyint(4) NOT NULL DEFAULT '1',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
