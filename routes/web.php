@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\GoogleController;
+use App\Http\Controllers\Auth\FacebookController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\InstallController;
 use App\Http\Controllers\PageNotFoundController;
@@ -51,6 +53,12 @@ Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])
 
 Auth::routes();
 Route::post('/check-email', [RegisterController::class, 'checkEmail'])->name('check.email');
+
+// Social login
+Route::get('/auth/google', [GoogleController::class, 'redirect'])->name('google.login');
+Route::get('/auth/google/callback', [GoogleController::class, 'callback'])->name('google.callback');
+Route::get('/auth/facebook', [FacebookController::class, 'redirect'])->name('facebook.login');
+Route::get('/auth/facebook/callback', [FacebookController::class, 'callback'])->name('facebook.callback');
 
 // Dashboard routes
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
