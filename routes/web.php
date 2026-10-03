@@ -17,6 +17,7 @@ use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\Dashboard\PageController;
 use App\Http\Controllers\Dashboard\ArticleCategoryController;
 use App\Http\Controllers\Dashboard\TagController;
+use App\Http\Controllers\Dashboard\ArticleAIController;
 use App\Http\Controllers\Dashboard\ArticleController;
 use App\Http\Controllers\Dashboard\CommentController;
 
@@ -99,6 +100,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
     Route::get('/', [ArticleController::class, 'index'])->name('dashboard.articles')->middleware('checkUserPermissions:view-articles');
     Route::get('/new', [ArticleController::class, 'create'])->name('dashboard.articles.new')->middleware('checkUserPermissions:add-articles');
     Route::post('/add', [ArticleController::class, 'save'])->name('dashboard.articles.add')->middleware('checkUserPermissions:add-articles');
+    Route::post('/ai-generate', [ArticleAIController::class, 'generate'])->name('dashboard.articles.ai-generate');
     Route::get('/edit/{id}', [ArticleController::class, 'edit'])->name('dashboard.articles.edit')->middleware('checkUserPermissions:edit-articles');
     Route::post('/delete-image/{id}/{fileName}', [ArticleController::class, 'deleteImage'])->name('dashboard.articles.delete-image')->middleware('checkUserPermissions:edit-articles');
     Route::post('/delete-video/{id}/{fileName}', [ArticleController::class, 'deleteVideo'])->name('dashboard.articles.delete-video')->middleware('checkUserPermissions:edit-articles');
